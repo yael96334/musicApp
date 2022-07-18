@@ -7,16 +7,17 @@ import { useState } from "react";
 
 type Props = {
   // setshowButtonBack: React.Dispatch<React.SetStateAction<boolean>>,
-  getbyArtist: (nameArtist: string) => void
+  getbyArtist: (nameArtist: string) => void,
+  setshowButtonBack: React.Dispatch<React.SetStateAction<boolean>>
 
 }
-const SearchSong = ({ getbyArtist }: Props) => {
+const SearchSong = ({ getbyArtist ,setshowButtonBack}: Props) => {
 
   const [artist, setArtist] = useState<string>('')
   const getSongByArrtist = (e: any) => {
     e.preventDefault()
     getbyArtist(artist)
-    // setshowButtonBack(true);
+    setshowButtonBack(true);
   }
 
   return (

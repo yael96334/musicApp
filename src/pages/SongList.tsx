@@ -87,13 +87,15 @@ export default function SongList({ songArr, getSongs, deleteSong, getbyArtist }:
     const [songs, setSongs] = React.useState(useSelector((state: Song[]) => state))
     const [artist, setArtist] = React.useState("");
     const [id, setId] = React.useState("");
+    const [showButtonBack, setshowButtonBack] = React.useState<boolean>(false)
 
 
     return (
         <>
             <p></p>
-            <SearchSong getbyArtist={getbyArtist} />
-            {/* {songArr.length === 0 &&<h3 style={{textAlign:'center',color:'red'}}>Sorry, no search details are available</h3>} */}
+            
+            <SearchSong getbyArtist={getbyArtist} setshowButtonBack={setshowButtonBack} />
+            {songArr.length === 0 &&<h3 style={{textAlign:'center',color:'red'}}>Sorry, no search details are available</h3>}
             {songArr.map(
                 (song: Song) => {
                     return (
@@ -103,7 +105,10 @@ export default function SongList({ songArr, getSongs, deleteSong, getbyArtist }:
                     )
                 })
             }
+        {showButtonBack && <Button variant="outlined" sx={{ml:75,   }} onClick={() => { getSongs(), setshowButtonBack(false) }}> All Songs</Button>}
+            
             <AddButton />
+
         </>
     )
 }
