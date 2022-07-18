@@ -77,7 +77,7 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton  sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src='C:\Users\user1\Desktop\‏‏תיקיה חדשה (2)\a\public\img\backGround\tav.jpg'/>
+                <Avatar alt="Remy Sharp" src='m'/>
               </IconButton>
             </Tooltip>
             
